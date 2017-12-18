@@ -70,8 +70,8 @@
 			],
 			"build-options": {
 				"env": {
-					"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
-					"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+                                        "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+                                        "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
 				}
 			},
 			"sources": [
@@ -93,10 +93,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/babluboy/bookworm/archive/0.9.1.tar.gz",
-                    "sha256": "ace551e366bf29b501a72f0a394794658bd9efd114399fb1e2e217282fbe3de9",
-                    "branch": "0.9.1",
-                    "commit": "756501973cb58087205d196d38ff11e97409fbb7"
+                    "url": "https://github.com/babluboy/bookworm/archive/0.9.9.tar.gz",
+                    "sha256": "a120d60281459c055bd4c444a7939248cfc2611396eabcc04768b391c702629c"
                 }
             ]
         }
