@@ -92,8 +92,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/babluboy/bookworm/archive/0.9.9.tar.gz",
-                    "sha256": "a120d60281459c055bd4c444a7939248cfc2611396eabcc04768b391c702629c"
+                    "url": "https://github.com/babluboy/bookworm/archive/1.0.0.tar.gz",
+                    "sha256": "8dacaab3531c189836f7ef65dc69a84de9d03e467e68275bb6c5a31b17f9fbc5"
                 }
             ]
         }
