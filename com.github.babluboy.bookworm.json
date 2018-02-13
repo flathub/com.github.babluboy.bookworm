@@ -1,7 +1,7 @@
 {
     "id": "com.github.babluboy.bookworm",
     "runtime": "org.gnome.Platform",
-    "runtime-version" : "3.24",
+    "runtime-version" : "3.26",
     "sdk": "org.gnome.Sdk",
     "command": "com.github.babluboy.bookworm",
     "finish-args": [
