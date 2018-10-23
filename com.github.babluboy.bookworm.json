@@ -1,14 +1,16 @@
 {
     "id": "com.github.babluboy.bookworm",
     "runtime": "org.gnome.Platform",
-    "runtime-version" : "3.26",
+    "runtime-version" : "3.24",
     "sdk": "org.gnome.Sdk",
-    "command": "com.github.babluboy.bookworm",
+    "command": "bookworm",
+    "rename-appdata-file": "com.github.babluboy.bookworm.appdata.xml",
     "finish-args": [
             "--share=ipc",
             "--socket=x11",
             "--device=dri",
             "--socket=wayland",
+            "--share=network",
             "--filesystem=home",
             "--talk-name=ca.desrt.dconf",
             "--filesystem=xdg-run/dconf",
@@ -69,15 +71,15 @@
 			],
 			"build-options": {
 				"env": {
-                                        "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
-                                        "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+					"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+					"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
 				}
 			},
 			"sources": [
 				{
 					"type":"archive",
-					"url": "https://github.com/elementary/granite/archive/0.4.1.tar.gz",
-					"sha256": "035a9b36ef73352ff8a76be06b876d9e2ea6633abb693fb67297d998c8d3a240"
+					"url": "https://github.com/elementary/granite/archive/5.1.0.tar.gz",
+					"sha256": "4483399c62bf4cf5c26a6b708736b2b80caae8d40a0452be45548f7e8f23e0ed"
 				}
 			]
         },
@@ -92,11 +94,10 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/babluboy/bookworm/archive/1.0.0.tar.gz",
-                    "sha256": "8dacaab3531c189836f7ef65dc69a84de9d03e467e68275bb6c5a31b17f9fbc5"
+                    "url": "https://github.com/babluboy/bookworm/archive/1.1.1.tar.gz",
+                    "sha256": "121030d3e315279e50bd18c08fee0c9ecfb2ccd284bcb9e35b048e61741fe857"
                 }
             ]
         }
     ]
 }
-
