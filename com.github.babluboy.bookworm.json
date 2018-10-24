@@ -2,17 +2,11 @@
     "id": "com.github.babluboy.bookworm",
     "runtime": "org.gnome.Platform",
     "runtime-version" : "3.30",
+	"base" : "io.elementary.BaseApp",
+	"base-version" : "juno",
     "sdk": "org.gnome.Sdk",
     "command": "com.github.babluboy.bookworm",
     "rename-appdata-file": "com.github.babluboy.bookworm.appdata.xml",
-    "build-options": {
-		"env": {
-			"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
-			"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
-		},
-	    	"cflags": "-O2",
-		"cxxflags": "-O2"
-    },
     "finish-args": [
             "--share=ipc",
             "--socket=x11",
@@ -48,47 +42,6 @@
                 	}
                 ]
         },
-        {
-                "name": "libgee",
-                "build-options": {
-                	"env": {
-                        	"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
-                        	"PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
-				}
-		},
-		"make-install-args": [
-        			"girdir=/app/share/gir-1.0",
-        			"typelibdir=/app/lib/girepository-1.0"
-    		],
-		"sources": [
-				{
-					"type":"archive",
-					"url": "https://github.com/GNOME/libgee/archive/0.20.0.tar.gz",
-					"sha256": "42fe6d651910cb8b720167f71c5255a1b7b1afc82fecd3f31e61f9602b3b1335"
-				}
-		]
-	},
-	{
-	   "name": "granite",
-	   "buildsystem": "cmake-ninja",
-                    "config-opts": [
-				"-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-				"-DCMAKE_INSTALL_LIBDIR=/app/lib",
-			        "-DINTROSPECTION_GIRDIR=/app/share/gir-1.0",
-			    	"-DINTROSPECTION_TYPELIBDIR=/app/lib/girepository-1.0"
-		    ],
-		    "cleanup": [
-		    	"/bin",
-		        "/share/applications"
-		     ],
-		     "sources": [
-		                {
-					"type":"archive",
-					"url": "https://github.com/elementary/granite/archive/5.1.0.tar.gz",
-					"sha256": "4483399c62bf4cf5c26a6b708736b2b80caae8d40a0452be45548f7e8f23e0ed"
-				}
-		     ]
-	},
         {
             "name": "bookworm",
             "buildsystem": "cmake",
