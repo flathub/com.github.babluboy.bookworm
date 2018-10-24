@@ -2,11 +2,10 @@
     "id": "com.github.babluboy.bookworm",
     "runtime": "org.gnome.Platform",
     "runtime-version" : "3.30",
-	"base" : "io.elementary.BaseApp",
-	"base-version" : "juno",
+    "base" : "io.elementary.BaseApp",
+    "base-version" : "juno",
     "sdk": "org.gnome.Sdk",
     "command": "com.github.babluboy.bookworm",
-    "rename-appdata-file": "com.github.babluboy.bookworm.appdata.xml",
     "finish-args": [
             "--share=ipc",
             "--socket=x11",
@@ -19,10 +18,14 @@
             "--filesystem=~/.config/dconf:ro",
             "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
+    "cleanup": [
+        "/include",
+        "/lib/cmake"
+    ],
     "modules": [
         {
                 "name": "openjpeg",
-                "buildsystem" : "cmake",
+                "buildsystem" : "cmake-ninja",
                 "sources" : [
                         {
                                 "type" : "archive",
@@ -32,31 +35,26 @@
                 ]
         },
         {
-        	"name" : "poppler",
-        	"buildsystem" : "cmake",
-        	"sources" : [
-                	{
-                        	"type": "archive",
-                        	"url": "https://poppler.freedesktop.org/poppler-0.60.1.tar.xz",
-                        	"sha256": "19f185e05c3b59b4a1de2cec8ef39f5446035493d17bbed41d02fb9a77c8a93c"
-                	}
-                ]
+            "name" : "poppler",
+            "buildsystem" : "cmake-ninja",
+            "sources" : [
+                {
+                    "type": "archive",
+                    "url": "https://poppler.freedesktop.org/poppler-0.60.1.tar.xz",
+                    "sha256": "19f185e05c3b59b4a1de2cec8ef39f5446035493d17bbed41d02fb9a77c8a93c"
+                }
+            ]
         },
         {
             "name": "bookworm",
-            "buildsystem": "cmake",
-            "build-options" : {
-                    "config-opts" : [
-                            "-DCMAKE_INSTALL_PREFIX=/app"
-                    ]
-            },
+            "buildsystem": "cmake-ninja",
             "sources": [
                 {
                     "type": "archive",
                     "url": "https://github.com/babluboy/bookworm/archive/1.1.1.tar.gz",
                     "sha256": "121030d3e315279e50bd18c08fee0c9ecfb2ccd284bcb9e35b048e61741fe857"
                 },
-		{
+                {
                     "type": "patch",
                     "path": "apply-eos-theme"
                 }
