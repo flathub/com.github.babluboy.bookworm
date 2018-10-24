@@ -1,0 +1,26 @@
+From c8ad2e5efbfdf4e0ed8afe8f3706a2eca86740af Mon Sep 17 00:00:00 2001
+From: Siddhartha Das <bablu.boy@gmail.com>
+Date: Wed, 24 Oct 2018 10:03:44 +0100
+Subject: [PATCH] added code for forcing elementary theme and icons
+
+---
+ src/bookworm.vala | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/bookworm.vala b/src/bookworm.vala
+index 91e282b..875c142 100644
+--- a/src/bookworm.vala
++++ b/src/bookworm.vala
+@@ -170,6 +170,9 @@ public class BookwormApp.Bookworm : Granite.Application {
+ 			debug("No instance of Bookworm found");
+ 			window = new Gtk.ApplicationWindow (this);
+ 			default_theme = Gtk.IconTheme.get_default();
++			//patch for forcing elementary os theme and icons
++			Gtk.Settings.get_default().set_property("gtk-theme-name", "elementary");
++			Gtk.Settings.get_default().set_property("gtk-icon-theme-name", "elementary");
+ 			//retrieve Settings
+ 			settings = BookwormApp.Settings.get_instance();
+ 			//set window attributes
+-- 
+2.17.1
+
