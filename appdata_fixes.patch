@@ -1,0 +1,27 @@
+--- a/data/com.github.babluboy.bookworm.appdata.xml.in	2019-08-10 20:20:51.000000000 +0200
++++ b/data/com.github.babluboy.bookworm.appdata.xml.in	2019-10-12 01:56:27.699865070 +0200
+@@ -46,16 +46,6 @@
+           </ul>
+         </description>
+      </release>
+-     <release version="1.0.0" date="2018-02-11">
+-      <description>
+-        <p>Right to Left Reading</p>
+-        <ul>
+-            <li>Support for right-to-left script</li>
+-            <li>A shiny new icon and new cover images</li>
+-            <li>Better support for EPUB table of contents</li>
+-        </ul>
+-      </description>
+-    </release>
+     <release version="1.1.0" date="2018-09-30">
+         <description>
+           <p>This release has some new features, fixes and new translations:</p>
+@@ -124,6 +114,7 @@
+      <value key="x-appcenter-color-primary-text">#260063</value>
+      <value key="x-appcenter-suggested-price">2</value>
+   </custom>
++  <translation type="gettext">com.github.babluboy.bookworm</translation>
+   <content_rating type="oars-1.1">
+     <content_attribute id="violence-cartoon">none</content_attribute>
+     <content_attribute id="violence-fantasy">none</content_attribute>
