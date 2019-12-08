@@ -19,7 +19,9 @@
         "/include",
         "/lib/cmake"
     ],
-    "modules": [{
+    "modules": [
+        "shared-modules/python2.7/python-2.7.json",
+        {
             "name": "openjpeg",
             "buildsystem": "cmake-ninja",
             "sources": [{
