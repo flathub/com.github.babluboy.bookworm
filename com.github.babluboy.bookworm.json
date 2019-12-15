@@ -20,6 +20,7 @@
         "/lib/cmake"
     ],
     "modules": [
+        "shared-modules/python2.7/python-2.7.json",
         {
             "name": "poppler",
             "buildsystem": "cmake-ninja",
