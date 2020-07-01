@@ -1,7 +1,7 @@
 {
     "id": "com.github.babluboy.bookworm",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.34",
+    "runtime-version": "3.36",
     "base": "io.elementary.BaseApp",
     "base-version": "juno-19.08",
     "sdk": "org.gnome.Sdk",
@@ -26,8 +26,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [{
                 "type": "archive",
-                "url": "https://poppler.freedesktop.org/poppler-0.81.0.tar.xz",
-                "sha256": "212d020b035b67b36c9666bd08ac778dff3222d85c01c338787d546f0f9bfe02"
+                "url": "https://poppler.freedesktop.org/poppler-0.89.0.tar.xz",
+                "sha256": "fba230364537782cc5d43b08d693ef69c36586286349683c7b127156a8ef9b5c"
             }]
         },
         {
