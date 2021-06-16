@@ -1,9 +1,9 @@
 {
     "id": "com.github.babluboy.bookworm",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.36",
+    "runtime-version": "40",
     "base": "io.elementary.BaseApp",
-    "base-version": "juno-19.08",
+    "base-version": "juno-20.08",
     "sdk": "org.gnome.Sdk",
     "command": "com.github.babluboy.bookworm",
     "finish-args": [
