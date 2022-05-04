@@ -1,7 +1,7 @@
 {
     "id": "com.github.babluboy.bookworm",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "40",
+    "runtime-version": "42",
     "base": "io.elementary.BaseApp",
     "base-version": "juno-20.08",
     "sdk": "org.gnome.Sdk",
