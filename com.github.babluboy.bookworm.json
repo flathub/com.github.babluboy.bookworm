@@ -74,7 +74,7 @@
                 /* Static library */
                 "/lib/python2.7/config/libpython2.7.a"
             ]
-        }
+        },
         {
             "name": "poppler",
             "buildsystem": "cmake-ninja",
