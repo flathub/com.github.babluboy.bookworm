@@ -1,7 +1,7 @@
 {
     "id": "com.github.babluboy.bookworm",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "44",
     "base": "io.elementary.BaseApp",
     "base-version": "juno-21.08",
     "sdk": "org.gnome.Sdk",
@@ -22,7 +22,16 @@
         "/lib/cmake"
     ],
     "modules": [
-        "shared-modules/python2.7/python-2.7.json",
+        {
+            "name": "cpython",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz",
+                    "sha256": "f434053ba1b5c8a5cc597e966ead3c5143012af827fd3f0697d21450bb8d87a6"
+                }
+            ]
+        },
         {
             "name": "poppler",
             "buildsystem": "cmake-ninja",
