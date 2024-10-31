@@ -8,7 +8,6 @@
     "command": "com.github.babluboy.bookworm",
     "finish-args": [
         "--share=ipc",
-        "--socket=x11",
         "--device=dri",
         "--socket=wayland",
         "--socket=fallback-x11",
