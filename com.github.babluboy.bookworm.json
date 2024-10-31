@@ -1,10 +1,10 @@
 {
     "id": "com.github.babluboy.bookworm",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "23.08",
     "base": "io.elementary.BaseApp",
-    "base-version": "juno-21.08",
-    "sdk": "org.gnome.Sdk",
+    "base-version": "juno-23.08",
+    "sdk": "org.freedesktop.Sdk",
     "command": "com.github.babluboy.bookworm",
     "finish-args": [
         "--share=ipc",
@@ -22,7 +22,52 @@
         "/lib/cmake"
     ],
     "modules": [
-        "shared-modules/python2.7/python-2.7.json",
+        "shared-modules/libsoup/libsoup-2.4.json",
+        {
+            "name": "unifdef",
+            "no-autogen": true,
+            "make-install-args": [
+                "prefix=${FLATPAK_DEST}"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz",
+                    "sha256": "43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400"
+                }
+            ],
+            "cleanup": [
+                "*"
+            ]
+        },
+        {
+            "name": "webkit2gtk-4.0",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DPORT=GTK",
+                "-DENABLE_WEBDRIVER=OFF",
+                "-DUSE_LIBBACKTRACE=OFF",
+                "-DUSE_GTK4=OFF",
+                "-DENABLE_BUBBLEWRAP_SANDBOX=OFF",
+                "-DENABLE_DOCUMENTATION=OFF",
+                "-DUSE_SOUP2=ON",
+                "-DENABLE_MINIBROWSER=OFF",
+                "-DUSE_LIBSECRET=OFF",
+                "-DENABLE_GAMEPAD=OFF",
+                "-DUSE_JPEGXL=OFF",
+                "-DUSE_WOFF2=OFF",
+                "-DUSE_AVIF=OFF",
+                "-DENABLE_SPELLCHECK=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.44.0.tar.xz",
+                    "sha256": "c66530e41ba59b1edba4ee89ef20b2188e273bed0497e95084729e3cfbe30c87"
+                }
+            ]
+        },
         {
             "name": "poppler",
             "buildsystem": "cmake-ninja",
