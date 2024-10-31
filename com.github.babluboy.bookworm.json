@@ -84,6 +84,10 @@
         {
             "name": "bookworm",
             "buildsystem": "meson",
+            "post-install" : [
+                "mkdir -p /app/share/icons/hicolor/scalable/apps && mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+                "find /app/share/icons/hicolor -type f -not -path \"*scalable*\" -not -path \"*actions*\" -name \"*.svg\" -delete"
+            ],
             "sources": [{
                     "type": "archive",
                     "url": "https://github.com/babluboy/bookworm/archive/1.1.2.tar.gz",
