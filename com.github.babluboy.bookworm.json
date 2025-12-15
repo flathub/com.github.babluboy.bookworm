@@ -1,9 +1,9 @@
 {
     "id": "com.github.babluboy.bookworm",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "23.08",
+    "runtime-version": "24.08",
     "base": "io.elementary.BaseApp",
-    "base-version": "juno-23.08",
+    "base-version": "circe-24.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "com.github.babluboy.bookworm",
     "finish-args": [
@@ -63,8 +63,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://webkitgtk.org/releases/webkitgtk-2.44.0.tar.xz",
-                    "sha256": "c66530e41ba59b1edba4ee89ef20b2188e273bed0497e95084729e3cfbe30c87"
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.44.4.tar.xz",
+                    "sha256": "2ce4ec1b78413035037aba8326b31ed72696626b7bea7bace5e46ac0d8cbe796"
                 }
             ]
         },
