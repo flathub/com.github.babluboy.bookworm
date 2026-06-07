@@ -1,0 +1,58 @@
+id: com.github.babluboy.bookworm
+runtime: org.gnome.Platform
+runtime-version: '50'
+base: io.elementary.BaseApp
+base-version: circe-25.08
+sdk: org.gnome.Sdk
+command: com.github.babluboy.bookworm
+finish-args:
+  - --share=ipc
+  - --device=dri
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=network
+  - --filesystem=home
+  - --talk-name=org.gtk.vfs.*
+  - --filesystem=xdg-run/gvfsd
+  - --metadata=X-DConf=migrate-path=/com/github/babluboy/bookworm/
+
+# WARNING: A temporary solution until io.elementary.BaseApp//circe-26.08 released
+cleanup-commands:
+  - rm -rf /app/bin/sassc
+  - rm -rf /app/include
+  - rm -rf /app/lib/libportal*
+  - rm -rf /app/lib/libsass*
+  - rm -rf /app/lib/pkgconfig
+  - rm -rf /app/share/gir-1.0
+  - rm -rf /app/share/man
+  - rm -rf /app/share/vala
+modules:
+
+  - name: poppler
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DENABLE_QT5=OFF
+      - -DENABLE_QT6=OFF
+      - -DENABLE_CPP=OFF
+      - -DENABLE_BOOST=OFF
+      - -DENABLE_LIBOPENJPEG=openjpeg2
+    sources:
+      - type: archive
+        url: https://poppler.freedesktop.org/poppler-26.06.0.tar.xz
+        sha256: 4cb4e5a3dc8cb5eec751c8a23c8ba19f61f96dedc0cd07d2aee6b0c8e2cf6ba4
+
+  - name: bookworm
+    buildsystem: meson
+    post-install:
+      - mkdir -p /app/share/icons/hicolor/scalable/apps
+      - mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - find /app/share/icons/hicolor -type f -not -path "*scalable*" -not -path "*actions*" -name "*.svg" -delete
+    sources:
+      - type: archive
+        url: https://github.com/babluboy/bookworm/archive/1.1.2.tar.gz
+        sha256: 6d27e55697debfa08f7cc15805413b74c94c55111cdf2d333b306228eccad824
+      - type: patch
+        paths:
+          - webkitgtk-4.1.patch
+          - apply-eos-theme.patch
+          - appdata_fixes.patch
